@@ -1,0 +1,126 @@
+# depslib dependency file v1.0
+1313374669 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gameobject.cpp
+	"gameobject.h"
+	<iostream>
+
+1313382707 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gameobject.h
+	<string>
+	<map>
+	<vector>
+	"gocomponent.h"
+	"loadable.h"
+
+1313382746 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gocomponent.h
+	<string>
+	"gameobject.h"
+	"loadable.h"
+
+1302957776 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gocomponent.cpp
+	"gocomponent.h"
+
+1302957776 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/goctemplate.cpp
+
+1313375551 source:/home/aks/Code_Projects/Playtime/BlockBuilder/main.cpp
+	"lib/components/goc_cartloc.h"
+	"lib/manager/objectmanagers.h"
+	"lib/gameobject/gotemplate.h"
+	"lib/TinyXml/tinyxml.h"
+	"lib/templates/components/goccartloctemplate.h"
+
+1311530441 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/components/goc_cartloc.cpp
+	"goc_cartloc.h"
+
+1313375305 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/components/goc_cartloc.h
+	"goc_location.h"
+
+1313375305 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/components/goc_location.h
+	"../gameobject/gocomponent.h"
+
+1311635793 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gotemplate.cpp
+	"gotemplate.h"
+
+1313382746 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gotemplate.h
+	"gameobject.h"
+	"goctemplate.h"
+
+1313382746 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/goctemplate.h
+	"gocomponent.h"
+
+1311635838 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/manager/objectmanagers.h
+	"manager.h"
+	"../gameobject/gotemplate.h"
+
+1311635478 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/manager/manager.h
+	"../singleton.h"
+	<map>
+	"manager.hpp"
+
+1303520415 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/singleton.h
+	<cstdlib>
+	<iostream>
+
+1303520415 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/manager/manager.hpp
+	"manager.h"
+
+1312775127 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/TinyXml/tinystr.cpp
+	"tinystr.h"
+
+1269314160 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/TinyXml/tinystr.h
+	<assert.h>
+	<string.h>
+
+1269314160 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/TinyXml/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1275541269 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/TinyXml/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1269314160 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/TinyXml/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1269314160 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/TinyXml/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1313259450 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/componentLoader.cpp
+	"componentLoader.h"
+
+1313259421 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/componentLoader.h
+	"loaderbase.h"
+	"../gameobject/goctemplate.h"
+
+1313382810 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.h
+	<string>
+	"../TinyXml/tinyxml.h"
+	"../manager/manager.h"
+	"../gameobject/loadable.h"
+	<vector>
+
+1313260193 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.cpp
+	"loaderbase.h"
+
+1313382810 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/goc_cartloc_loader.cpp
+	"goc_cartloc_loader.h"
+
+1313382854 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/goc_cartloc_loader.h
+	"componentLoader.h"
+
+1313381769 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/templates/components/goccartloctemplate.h
+	"../../gameobject/goctemplate.h"
+	"../../components/goc_cartloc.h"
+
+1313382707 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/loadable.h
+

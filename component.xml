@@ -1,0 +1,15 @@
+<root>
+
+<ComponentTemplate family="Location" component="Cartesian_Location" name = "Basic_Location">
+<x value='0'/>
+<y value='0'/>
+<z value='0'/>
+</ComponentTemplate>
+
+<ComponentTemplate family="Location" component="Cartesian_Location" name = "Nother_Location">
+<x value='0'/>
+<y value='1'/>
+<z value='0'/>
+</ComponentTemplate>
+
+</root>
