@@ -43,7 +43,7 @@ class LoaderBase
 
 };
 
-class LoaderSetBase : public Manager< Loader_IDType, LoaderBase*>
+class LoaderManager : public Manager< Loader_IDType, LoaderBase*>
 {
 	public:
 		virtual bool loadFromFile(const std::string &) = 0;

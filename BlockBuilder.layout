@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+	<File name="lib/Errorer/errorer.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="20" topLine="0" />
+	</File>
+	<File name="lib/Errorer/errorer.h" open="1" top="0" tabpos="7">
+		<Cursor position="280" topLine="12" />
+	</File>
 	<File name="lib/TinyXml/tinyxml.h" open="1" top="0" tabpos="3">
-		<Cursor position="34489" topLine="958" />
+		<Cursor position="34348" topLine="958" />
 	</File>
 	<File name="lib/block.h" open="0" top="0" tabpos="2">
 		<Cursor position="73" topLine="0" />
@@ -19,44 +25,44 @@
 	<File name="lib/gameobject/gameobject.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="2432" topLine="121" />
 	</File>
-	<File name="lib/gameobject/gameobject.h" open="1" top="1" tabpos="4">
-		<Cursor position="263" topLine="9" />
+	<File name="lib/gameobject/gameobject.h" open="0" top="0" tabpos="4">
+		<Cursor position="263" topLine="25" />
 	</File>
-	<File name="lib/gameobject/gocomponent.h" open="1" top="0" tabpos="6">
-		<Cursor position="232" topLine="0" />
+	<File name="lib/gameobject/gocomponent.h" open="0" top="0" tabpos="6">
+		<Cursor position="232" topLine="9" />
 	</File>
 	<File name="lib/gameobject/goctemplate.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/gameobject/goctemplate.h" open="1" top="0" tabpos="8">
+	<File name="lib/gameobject/goctemplate.h" open="0" top="0" tabpos="8">
 		<Cursor position="100" topLine="3" />
 	</File>
 	<File name="lib/gameobject/gotemplate.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="977" topLine="6" />
 	</File>
-	<File name="lib/gameobject/gotemplate.h" open="1" top="0" tabpos="7">
+	<File name="lib/gameobject/gotemplate.h" open="0" top="0" tabpos="7">
 		<Cursor position="152" topLine="0" />
 	</File>
-	<File name="lib/gameobject/loadable.h" open="1" top="0" tabpos="5">
+	<File name="lib/gameobject/loadable.h" open="1" top="0" tabpos="4">
 		<Cursor position="60" topLine="0" />
 	</File>
 	<File name="lib/loader/componentLoader.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="32" topLine="0" />
 	</File>
-	<File name="lib/loader/componentLoader.h" open="1" top="0" tabpos="10">
+	<File name="lib/loader/componentLoader.h" open="0" top="0" tabpos="10">
 		<Cursor position="371" topLine="0" />
 	</File>
 	<File name="lib/loader/goc_cartloc_loader.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1400" topLine="108" />
+		<Cursor position="2644" topLine="0" />
 	</File>
 	<File name="lib/loader/goc_cartloc_loader.h" open="1" top="0" tabpos="1">
-		<Cursor position="112" topLine="3" />
+		<Cursor position="139" topLine="6" />
 	</File>
-	<File name="lib/loader/loaderbase.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="23" topLine="0" />
+	<File name="lib/loader/loaderbase.cpp" open="1" top="1" tabpos="8">
+		<Cursor position="23" topLine="3" />
 	</File>
-	<File name="lib/loader/loaderbase.h" open="1" top="0" tabpos="9">
-		<Cursor position="159" topLine="24" />
+	<File name="lib/loader/loaderbase.h" open="1" top="0" tabpos="5">
+		<Cursor position="697" topLine="23" />
 	</File>
 	<File name="lib/manager/manager.h" open="0" top="0" tabpos="0">
 		<Cursor position="183" topLine="0" />

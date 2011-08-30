@@ -8,6 +8,7 @@
 
 enum ErrorSeverity
 {
+	ERR_NONE,
 	ERR_TRIV,
 	ERR_MINOR,
 	ERR_MAJOR,
@@ -16,11 +17,8 @@ enum ErrorSeverity
 
 class Errorer : public singleton <Errorer>
 {
+	typedef singleton <Errorer> single;
 	public:
-
-
-
-
 	struct ErrorRep
 	{
 		std::string Component, Message;
@@ -34,24 +32,24 @@ class Errorer : public singleton <Errorer>
 	};
 
 
-	void PushError(std::string Component, std::string Message, int Code, ErrorSeverity Severity);
-	void PopError();
-	ErrorRep & Top() const;
-	ErrorRep Top();
+	static void PushError(std::string Component, std::string Message, int Code, ErrorSeverity Severity);
+	static void PopError();
+	static ErrorRep & Top() const;
+	static ErrorRep Top();
 
-	std::vector<ErrorRep> & DumpLog() const;
+	static std::vector<ErrorRep> & DumpLog() const;
 
-	void Clear();
+	static void Clear();
 
-	bool HasError();
+	static bool HasError();
 
-	unsigned int NumErrors();
+	static unsigned int NumErrors();
 
-	void FlushErrorsToFile(std::string filename = "errors.log")
+	static void FlushErrorsToStream(ostream * output);
 
 	private:
 
-
+	std::vector<ErrorRep> m_errors;
 
 };
 

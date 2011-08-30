@@ -19,6 +19,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="lib/Errorer/errorer.cpp" />
+		<Unit filename="lib/Errorer/errorer.h" />
 		<Unit filename="lib/TinyXml/tinystr.cpp" />
 		<Unit filename="lib/TinyXml/tinystr.h" />
 		<Unit filename="lib/TinyXml/tinyxml.cpp" />
