@@ -1,6 +1,8 @@
 #ifndef GOC_CARTLOC_LOADER_H
 #define GOC_CARTLOC_LOADER_H
 #include "componentLoader.h"
+#include "../templates/components/goccartloctemplate.h"
+
 
 class GOC_CartLoc_Loader : public GOCLoader
 {

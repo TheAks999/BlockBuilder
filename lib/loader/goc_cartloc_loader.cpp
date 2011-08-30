@@ -52,9 +52,9 @@ bool GOC_CartLoc_Template_Loader::load(TiXmlElement * elem, Loadable * loadable)
 
 	std::string name = elem->Attribute("name");
 
-	float x;
-	float y;
-	float z;
+	double x;
+	double y;
+	double z;
 
 	TiXmlNode * node = elem->FirstChild();
 	TiXmlElement * child;
@@ -89,8 +89,6 @@ bool GOC_CartLoc_Template_Loader::load(TiXmlElement * elem, Loadable * loadable)
 	}
 
 	child->Attribute("value",&x);
-
-
 	//Second Child
 
 	node = elem->IterateChildren(node);
@@ -107,7 +105,7 @@ bool GOC_CartLoc_Template_Loader::load(TiXmlElement * elem, Loadable * loadable)
 		return false;
 	}
 
-	TiXmlElement * child = node->ToElement();
+	child = node->ToElement();
 
 	if (child->Value() != "x")
 	{
