@@ -102,7 +102,7 @@
 	"loaderbase.h"
 	"../gameobject/goctemplate.h"
 
-1313382810 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.h
+1314713062 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.h
 	<string>
 	"../TinyXml/tinyxml.h"
 	"../manager/manager.h"
@@ -112,11 +112,12 @@
 1313260193 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.cpp
 	"loaderbase.h"
 
-1313382810 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/goc_cartloc_loader.cpp
+1314673779 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/goc_cartloc_loader.cpp
 	"goc_cartloc_loader.h"
 
-1313382854 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/goc_cartloc_loader.h
+1314673980 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/goc_cartloc_loader.h
 	"componentLoader.h"
+	"../templates/components/goccartloctemplate.h"
 
 1313381769 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/templates/components/goccartloctemplate.h
 	"../../gameobject/goctemplate.h"

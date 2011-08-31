@@ -4,27 +4,75 @@ void Errorer::PushError(std::string Component, std::string Message, int Code, Er
 {
 	if (single::isInit())
 	{
-		Errorer::get()->m_errors.push_back(ErrorRep(Component,Message,Code,Severity));
+		single::get()->m_errors.push_back(ErrorRep(Component,Message,Code,Severity));
 	}
 }
 
-void PopError()
+void Errorer::PopError()
 {
 	if (single::isInit())
 	{
-		Errorer::get()->m_errors.push_back(ErrorRep(Component,Message,Code,Severity));
+		single::get()->m_errors.erase( single::get()->m_errors.begin() );
 	}
 }
 
-ErrorRep & Top() const;
-ErrorRep Top();
 
-std::vector<ErrorRep> & DumpLog() const;
+Errorer::ErrorRep Errorer::Top()
+{
+	if (single::isInit())
+		return *(single::get()->m_errors.begin());
 
-void Clear();
+	return ErrorRep("","",0,ERR_NONE);
+}
 
-bool HasError();
+std::vector<Errorer::ErrorRep> Errorer::DumpLog()
+{
+	if (single::isInit())
+		return single::get()->m_errors;
 
-unsigned int NumErrors();
+	return std::vector<ErrorRep>();
+}
 
-void FlushErrorsToStream(ostream * output);
+void Errorer::Clear()
+{
+	if (single::isInit())
+		single::get()->m_errors.clear();
+}
+
+bool Errorer::HasError()
+{
+	if (single::isInit())
+	return (single::get()->m_errors.size() != 0);
+	return false;
+}
+
+unsigned int Errorer::NumErrors()
+{
+	if (single::isInit())
+		return single::get()->m_errors.size();
+
+	return 0;
+}
+
+void Errorer::FlushErrorsToStream(std::ostream * output)
+{
+	if (!single::isInit())
+	{
+		*output << ErrorRep("","",0,ERR_NONE);
+		return;
+	}
+
+	if (single::get()->m_errors.size() == 0)
+	{
+		*output << ErrorRep("","",0,ERR_NONE);
+		return ;
+	}
+
+	while (single::get()->m_errors.size())
+	{
+		//print
+		*output << single::get()->m_errors[0] << '\n';
+		//erase
+		single::get()->m_errors.erase(single::get()->m_errors.begin());
+	}
+}

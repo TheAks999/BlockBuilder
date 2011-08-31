@@ -1,6 +1,9 @@
 #ifndef ERRORER_H
 #define ERRORER_H
 #include "../singleton.h"
+#include <string>
+#include <vector>
+#include <iostream>
 
 #ifdef MULTITHREAD
 #include "../Mutex/Mutex.h"
@@ -15,9 +18,9 @@ enum ErrorSeverity
 	ERR_CRIT
 };
 
-class Errorer : public singleton <Errorer>
+class Errorer : public Singleton <Errorer>
 {
-	typedef singleton <Errorer> single;
+	typedef Singleton <Errorer> single;
 	public:
 	struct ErrorRep
 	{
@@ -28,16 +31,41 @@ class Errorer : public singleton <Errorer>
 		friend bool operator<=(const ErrorRep & r1, const ErrorRep & r2){ return (r1.Severity <= r2.Severity); }
 		friend bool operator>(const ErrorRep & r1, const ErrorRep & r2){ return (r1.Severity > r2.Severity); }
 		friend bool operator>=(const ErrorRep & r1, const ErrorRep & r2){ return (r1.Severity >= r2.Severity); }
+		ErrorRep():Code(0),Severity(ERR_NONE){}
+		ErrorRep(std::string component, std::string message, int code, ErrorSeverity severity):
+			Component(component),Message(message),Code(code),Severity(severity){}
 
+		friend std::ostream & operator<<(std::ostream & o, const ErrorRep & e )
+		{
+			o << e.Component << " ";
+			switch (e.Severity)
+			{
+				case ERR_NONE:
+				o << "No Error";
+				return o;
+				case ERR_TRIV:
+				o << "Trivial";
+				break;
+				case ERR_MINOR:
+				o << "Minor";
+				break;
+				case ERR_MAJOR:
+				o << "Major";
+				break;
+				case ERR_CRIT:
+				o << "Critical";
+			}
+			 o << " Error Code(" << e.Code << "): " << e.Message;
+			 return o;
+		}
 	};
 
 
 	static void PushError(std::string Component, std::string Message, int Code, ErrorSeverity Severity);
 	static void PopError();
-	static ErrorRep & Top() const;
 	static ErrorRep Top();
 
-	static std::vector<ErrorRep> & DumpLog() const;
+	static std::vector<ErrorRep> DumpLog();
 
 	static void Clear();
 
@@ -45,7 +73,7 @@ class Errorer : public singleton <Errorer>
 
 	static unsigned int NumErrors();
 
-	static void FlushErrorsToStream(ostream * output);
+	static void FlushErrorsToStream(std::ostream * output);
 
 	private:
 
