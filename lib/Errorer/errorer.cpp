@@ -1,12 +1,33 @@
 #include "errorer.h"
+#include <fstream>
+
+/*************************
+ * @brief PushError
+ * Put an error onto the error queue to be displayed
+ * @param Component The component the error is coming from
+ * @param Message The error message to be displayed
+ * @param Code The numerical code to be listed with this error
+ * @param Severity The Severity of the error
+ ************************/
 
 void Errorer::PushError(std::string Component, std::string Message, int Code, ErrorSeverity Severity)
 {
+	#ifdef DEBUG
+		std::cout << ErrorRep(Component,Message,Code,Severity) << '\n';
+	#endif
+
 	if (single::isInit())
 	{
-		single::get()->m_errors.push_back(ErrorRep(Component,Message,Code,Severity));
+		ErrorRep rep = ErrorRep(Component,Message,Code,Severity);
+		single::get()->m_errors.push_back(rep);
+		SendToLog(rep);
 	}
 }
+
+/*************************
+ * @brief PopError
+ * Remove the top error from the Queue
+ ************************/
 
 void Errorer::PopError()
 {
@@ -16,6 +37,34 @@ void Errorer::PopError()
 	}
 }
 
+/*************************
+ * @brief SendToLog
+ * Append an error to the log file
+ * @param error The error that will be placed in the log file
+ ************************/
+
+void Errorer::SendToLog(const Errorer::ErrorRep & error)
+{
+	if (!single::isInit())
+		return;
+
+	std::ofstream output;
+
+	output.open(single::get()->m_logfile.c_str(),std::ios_base::out|std::ios_base::app);
+
+	if (!output.is_open())
+		return;
+
+	output << error;
+
+	output.close();
+}
+
+/*************************
+ * @brief Top
+ * The top of the error queue
+ * @return a copy of the ErrorRep that is on the top of the queue
+ ************************/
 
 Errorer::ErrorRep Errorer::Top()
 {
@@ -24,6 +73,12 @@ Errorer::ErrorRep Errorer::Top()
 
 	return ErrorRep("","",0,ERR_NONE);
 }
+
+/*************************
+ * @brief DumpLog
+ * The top of the error queue
+ * @return a copy of the ErrorRep that is on the top of the queue
+ ************************/
 
 std::vector<Errorer::ErrorRep> Errorer::DumpLog()
 {

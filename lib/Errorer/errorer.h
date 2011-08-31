@@ -75,9 +75,16 @@ class Errorer : public Singleton <Errorer>
 
 	static void FlushErrorsToStream(std::ostream * output);
 
+	std::string LogFilename(){ if (single::isInit()){return single::get()->m_logfile;}
+									else{return "NoFile";} }
+	void LogFilename(const std::string & filename){ if (single::isInit()) single::get()->m_logfile = filename; }
+
 	private:
 
+    void SendToLog(const ErrorRep & error);
+
 	std::vector<ErrorRep> m_errors;
+	std::string m_logfile;
 
 };
 
