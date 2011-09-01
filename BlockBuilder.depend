@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1313374669 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gameobject.cpp
+1314893005 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gameobject.cpp
 	"gameobject.h"
 	<iostream>
 
@@ -15,7 +15,7 @@
 	"gameobject.h"
 	"loadable.h"
 
-1302957776 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gocomponent.cpp
+1314892136 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gocomponent.cpp
 	"gocomponent.h"
 
 1302957776 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/goctemplate.cpp
@@ -36,7 +36,7 @@
 1313375305 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/components/goc_location.h
 	"../gameobject/gocomponent.h"
 
-1311635793 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gotemplate.cpp
+1314893003 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gotemplate.cpp
 	"gotemplate.h"
 
 1313382746 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gotemplate.h
@@ -102,11 +102,12 @@
 	"loaderbase.h"
 	"../gameobject/goctemplate.h"
 
-1314713062 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.h
+1314894412 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.h
 	<string>
 	"../TinyXml/tinyxml.h"
 	"../manager/manager.h"
 	"../gameobject/loadable.h"
+	"../Errorer/errorer.h"
 	<vector>
 
 1313260193 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/loader/loaderbase.cpp
@@ -124,4 +125,15 @@
 	"../../components/goc_cartloc.h"
 
 1313382707 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/loadable.h
+
+1314893542 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/Errorer/errorer.h
+	"../singleton.h"
+	<string>
+	<vector>
+	<iostream>
+	"../Mutex/Mutex.h"
+
+1314893541 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/Errorer/errorer.cpp
+	"errorer.h"
+	<fstream>
 

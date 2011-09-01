@@ -145,8 +145,8 @@ bool GameObject::hasComponentFam(const GOC_IDType & familyID)
 }
 
 /** @brief constructHash
-  * construct an
-  * @todo document
+  * construct a unique hash specifically for the object
+  * @return a hash that is nearly unique for the object
   */
 GO_IDType GameObject::constructHash()
 {
