@@ -22,10 +22,26 @@ typedef std::string Loader_IDType;
 class LoaderBase
 {
 	public:
+
+		/** @brief LoaderBase
+		  * basic Constructor
+		  */
 		LoaderBase(){}
 
+
+		/** @brief typeID
+		  *
+		  */
 		virtual const Loader_IDType typeID() = 0;
+
+		/** @brief familyID
+		  *
+		  */
 		virtual const Loader_IDType familyID() = 0;
+
+		/** @brief load
+		  *
+		  */
 		virtual bool load(TiXmlNode *, Loadable *) = 0;
 };
 
