@@ -76,8 +76,8 @@ Errorer::ErrorRep Errorer::Top()
 
 /*************************
  * @brief DumpLog
- * The top of the error queue
- * @return a copy of the ErrorRep that is on the top of the queue
+ * Dump the error log into a readable structure
+ * @return a copy of the ErrorRep vector
  ************************/
 
 std::vector<Errorer::ErrorRep> Errorer::DumpLog()
@@ -88,11 +88,22 @@ std::vector<Errorer::ErrorRep> Errorer::DumpLog()
 	return std::vector<ErrorRep>();
 }
 
+/*************************
+ * @brief Clear
+ * Clear all of the errors from the queue
+ ************************/
+
 void Errorer::Clear()
 {
 	if (single::isInit())
 		single::get()->m_errors.clear();
 }
+
+/*************************
+ * @brief HasError
+ * access to if the errorer has an
+ * @return true if an error exists on the queue
+ ************************/
 
 bool Errorer::HasError()
 {
@@ -101,6 +112,13 @@ bool Errorer::HasError()
 	return false;
 }
 
+
+/*************************
+ * @brief NumErrors
+ * The number of errors on the queue
+ * @return the number of errors on the queue
+ ************************/
+
 unsigned int Errorer::NumErrors()
 {
 	if (single::isInit())
@@ -108,6 +126,13 @@ unsigned int Errorer::NumErrors()
 
 	return 0;
 }
+
+
+/*************************
+ * @brief FlushToStream
+ * take all of the errors and place them into the stream specified
+ * @param output The stream the errors should be output to
+ ************************/
 
 void Errorer::FlushErrorsToStream(std::ostream * output)
 {

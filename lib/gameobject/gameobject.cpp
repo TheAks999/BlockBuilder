@@ -1,9 +1,22 @@
 #include "gameobject.h"
+#include <iostream>
+using namespace std;
+
+/** @brief id
+  * The unique id of the object
+  * @return the id of the object
+  */
 
 unsigned int GameObject::id()
 {
   return m_id;
 }
+
+
+/** @brief id
+  * mutator for the id of the object
+  * @param ID the id the object will have
+  */
 
 void GameObject::id( const unsigned int& ID )
 {
@@ -13,8 +26,7 @@ void GameObject::id( const unsigned int& ID )
 
 
 /** @brief ~GameObject
-  *
-  * @todo: document this function
+  * Destructor
   */
  GameObject::~GameObject()
 {
@@ -29,8 +41,7 @@ void GameObject::id( const unsigned int& ID )
 }
 
 /** @brief clearGOCs
-  *
-  * @todo: document this function
+  * Clear all game object components from the object
   */
 void GameObject::clearGOCs()
 {
@@ -45,12 +56,10 @@ void GameObject::clearGOCs()
 	m_components.clear();
 }
 
-#include <iostream>
-using namespace std;
 
 /** @brief setGOC
-  *
-  * @todo: document this function
+  * Add in or replace a component in the game object. The old data if replacing will be cleaned up.
+  * @param newComp A pointer to the new data to point at.
   */
 void GameObject::setGOC(GOComponent * newComp)
 {
@@ -66,8 +75,9 @@ void GameObject::setGOC(GOComponent * newComp)
 }
 
 /** @brief getGOC
-  *
-  * @todo: document this function
+  * Get a reference to a game object component
+  * @param familyID the family id that the component its refered to as
+  * @return a reference to the game object component
   */
 GOComponent* GameObject::getGOC(const GOC_IDType & familyID)
 {
@@ -82,8 +92,8 @@ GOComponent* GameObject::getGOC(const GOC_IDType & familyID)
 }
 
 /** @brief GameObject
-  *
-  * @todo: document this function
+  * constructor
+  * @param id the id of the object
   */
  GameObject::GameObject(const unsigned int & id):m_id(id)
 {
@@ -91,8 +101,8 @@ GOComponent* GameObject::getGOC(const GOC_IDType & familyID)
 }
 
 /** @brief listComponentFamilies
-  *
-  * @todo: document this function
+  * List the component families that are contained in the object in a vector.
+  * @return a vector of ids
   */
 std::vector<GOC_IDType> GameObject::listComponentFamilies()
 {
@@ -106,8 +116,8 @@ std::vector<GOC_IDType> GameObject::listComponentFamilies()
 }
 
 /** @brief listComponents
-  *
-  * @todo: document this function
+  * List the component names that are contained in the object in a vector.
+  * @return a vector of ids
   */
 std::vector<GOC_IDType> GameObject::listComponents()
 {
@@ -121,8 +131,9 @@ std::vector<GOC_IDType> GameObject::listComponents()
 }
 
 /** @brief hasComponentFam
-  *
-  * @todo: document this function
+  * checks to see if a component family exists
+  * @param familyID
+  * @return true if the family exists in the object
   */
 bool GameObject::hasComponentFam(const GOC_IDType & familyID)
 {
@@ -134,7 +145,7 @@ bool GameObject::hasComponentFam(const GOC_IDType & familyID)
 }
 
 /** @brief constructHash
-  *
+  * construct an
   * @todo document
   */
 GO_IDType GameObject::constructHash()
