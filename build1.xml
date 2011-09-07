@@ -1,0 +1,18 @@
+<build xmlns:sh="http://bitten.edgewall.org/tools/sh"
+			 xmlns:c="http://bitten.edgewall.org/tools/c"
+			 >
+	<step id="Pull" description="Get the source from the repo">
+		<sh:exec file="./gitpull.sh">
+	</step>
+	<step id="Make" description="Make the project">
+		<c:make target="compile" file="build/Makefile" />
+	</step>
+	<step id="Test" description="Run unit tests on the project">
+		<sh:exec executable="BlockBuilderCppUnit" output="cppunitoutput.xml" />
+		<c:cppunit file="cppunitoutput.xml" />
+ 	</step>
+	<!--<step id="Doxyment" description="Document run documentation program">
+		<sh:exec executable="">	
+	</step> -->
+
+</build>

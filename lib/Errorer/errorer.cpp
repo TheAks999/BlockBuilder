@@ -69,8 +69,10 @@ void Errorer::SendToLog(const Errorer::ErrorRep & error)
 Errorer::ErrorRep Errorer::Top()
 {
 	if (single::isInit())
-		return *(single::get()->m_errors.begin());
-
+	{
+		if (single::get()->m_errors.size())
+			return *(single::get()->m_errors.begin());
+	}
 	return ErrorRep("","",0,ERR_NONE);
 }
 

@@ -63,9 +63,10 @@ class LoaderManager : public Manager< Loader_IDType, LoaderBase*>
 		//virtual bool saveToFile(const std::string & filename;
 
 		/** @brief setNames
-		  * the set of names
+		  * the set of ids of loaders that are stored
+		  * @return a vector of ids
 		  */
-		std::vector<std::string> setNames();
+		std::vector<Loader_IDType>   setNames();
 
 	protected:
 	private:
