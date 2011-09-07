@@ -2,10 +2,6 @@
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TextTestRunner.h>
 #include <cppunit/XmlOutputter.h>
-
-
-
-
 #include <fstream>
 
 using namespace std;

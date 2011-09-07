@@ -6,6 +6,7 @@
 
 #include "gocomponent.h"
 #include "loadable.h"
+#include "gorequirements.h"
 
 class GOComponent;
 typedef std::string GOC_IDType;
@@ -25,24 +26,36 @@ class GameObject : public Loadable
 
 		GOComponent * getGOC(const GOC_IDType & familyID);
 		void setGOC(GOComponent * newComp);
+		bool removeGOC(const GOC_IDType & familyID);
 		void clearGOCs();
 
 		std::vector<GOC_IDType> listComponents();
 		std::vector<GOC_IDType> listComponentFamilies();
+		std::vector<GO_Requirement> listRequirements();
+
+		bool requirementsSet();
+
 
 		virtual GO_IDType constructHash();
 
 		/** Default destructor */
 		virtual ~GameObject();
 	protected:
-		/** @todo make timeline object for quicker accessing*/
+
+		void addRequirement();
+		void removeRequirement();
+		void clearRequirements();
+
+
 		//for easy access
 		typedef std::map < GOC_IDType /*id*/,GOComponent* /*value*/>
 				ComponentTable_t;
 
+		typedef std::vector<GO_Requirement*> RequirementTable;
+
 		GO_IDType m_id;
 		ComponentTable_t m_components;
-
+		RequirementTable m_requirements;
 	private:
 };
 
