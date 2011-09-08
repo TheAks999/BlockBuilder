@@ -29,6 +29,9 @@ class GameObjectTest : public  CppUnit::TestFixture
 
 	public:
 	void DoBasicSetup();
+	void DoBasicCleanup();
+
+	void AddComponent();
 
 
 };
