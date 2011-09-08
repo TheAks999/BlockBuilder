@@ -9,10 +9,9 @@ class GameObjectTest : public  CppUnit::TestFixture
 {
 	CPPUNIT_TEST_SUITE( GameObjectTest );
 	CPPUNIT_TEST( DoBasicSetup );
-	CPPUNIT_TEST( DoBasicCleanup );
 
 	CPPUNIT_TEST( AddComponent );
-	CPPUNIT_TEST( DoComponentCleanup );
+	/*
 	CPPUNIT_TEST( RemoveComponent );
 
 	CPPUNIT_TEST( HasComponentFamily );
@@ -23,14 +22,13 @@ class GameObjectTest : public  CppUnit::TestFixture
 
 	CPPUNIT_TEST( ListComponents );
 	CPPUNIT_TEST( ListComponentFamilies );
-
+	*/
 
 	CPPUNIT_TEST_SUITE_END();
 
 
 	public:
 	void DoBasicSetup();
-	void DoBasicCleanup();
 
 	void AddComponent();
 	void DoComponentCleanup();

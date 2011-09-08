@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
 <TestRun>
   <FailedTests></FailedTests>
-  <SuccessfulTests></SuccessfulTests>
+  <SuccessfulTests>
+    <Test id="1">
+      <Name>GameObjectTest::DoBasicSetup</Name>
+    </Test>
+  </SuccessfulTests>
   <Statistics>
-    <Tests>0</Tests>
+    <Tests>1</Tests>
     <FailuresTotal>0</FailuresTotal>
     <Errors>0</Errors>
     <Failures>0</Failures>
