@@ -11,7 +11,7 @@ BUILDSRC  := main.cpp $(SRC)
 UNITSRC   := unittestmain.cpp $(SRC) 
 #$(foreach sdir,$(UNITMODS),$(wildcard $(sdir)/*.cpp))
 OBJ       := $(patsubst %.cpp,%.o,$(BUILDSRC))
-UNITOBJ   := $(patsubst %.cpp,%.o,$(BUILDSRC))
+UNITOBJ   := $(patsubst %.cpp,%.o,$(UNITSRC))
 INCLUDES  := $(addprefix -I,$(SRC_DIR))
 
 vpath %.cpp $(SRC_DIR)
