@@ -26,7 +26,7 @@ class foh_GOComponentA : public GOComponent
 		const GOC_IDType constructHash() const { return familyID(); }
 };
 
-class foh_GOComponentA : public GOComponent
+class foh_GOComponentB: public GOComponent
 {
 	public:
 
