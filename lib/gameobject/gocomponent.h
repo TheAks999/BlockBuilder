@@ -27,6 +27,8 @@ class GOComponent : public Loadable
 
 		virtual GOC_IDType constructHash() = 0;
 
+		virtual bool requirementsMet(){ return true; }
+
 	protected:
 	private:
 		GameObject * m_owner;

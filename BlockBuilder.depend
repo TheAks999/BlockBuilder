@@ -3,14 +3,15 @@
 	"gameobject.h"
 	<iostream>
 
-1315367037 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gameobject.h
+1315493364 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gameobject.h
 	<string>
 	<map>
 	<vector>
 	"gocomponent.h"
 	"loadable.h"
+	"gocrequirements.h"
 
-1313382746 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gocomponent.h
+1315493350 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gocomponent.h
 	<string>
 	"gameobject.h"
 	"loadable.h"
@@ -133,7 +134,7 @@
 	<iostream>
 	"../Mutex/Mutex.h"
 
-1315353140 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/Errorer/errorer.cpp
+1315363337 source:/home/aks/Code_Projects/Playtime/BlockBuilder/lib/Errorer/errorer.cpp
 	"errorer.h"
 	<fstream>
 
@@ -143,4 +144,9 @@
 	<cppunit/ui/text/TextTestRunner.h>
 	<cppunit/XmlOutputter.h>
 	<fstream>
+
+1315493576 /home/aks/Code_Projects/Playtime/BlockBuilder/lib/gameobject/gocrequirements.h
+	<string>
+	<iostream>
+	"gocomponent.h"
 

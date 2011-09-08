@@ -15,14 +15,15 @@ class GameObjectTest : public  CppUnit::TestFixture
 	CPPUNIT_TEST( DoComponentCleanup );
 	CPPUNIT_TEST( RemoveComponent );
 
-	CPPUNIT_TEST( AddRequirement );
-	CPPUNIT_TEST( DoRequirementCleanup );
-	CPPUNIT_TEST( RemoveRequirement );
+	CPPUNIT_TEST( HasComponentFamily );
+
+	CPPUNIT_TEST( AddRequirementComponent );
+	CPPUNIT_TEST( DoRequirementComponentCleanup );
+	CPPUNIT_TEST( RemoveRequirementComponent );
 
 	CPPUNIT_TEST( ListComponents );
 	CPPUNIT_TEST( ListComponentFamilies );
 
-	CPPUNIT_TEST( HasComponentFamily );
 
 	CPPUNIT_TEST_SUITE_END();
 
@@ -35,6 +36,14 @@ class GameObjectTest : public  CppUnit::TestFixture
 	void DoComponentCleanup();
 	void RemoveComponent();
 
+	void HasComponentFamily ();
+
+	void AddRequirementComponent();
+	void DoRequirementComponentCleanup();
+	void RemoveRequirementComponent();
+
+	void ListComponents();
+	void ListComponentFamilies();
 
 };
 

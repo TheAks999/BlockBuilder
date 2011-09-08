@@ -6,7 +6,7 @@
 
 #include "gocomponent.h"
 #include "loadable.h"
-#include "gorequirements.h"
+#include "gocrequirements.h"
 
 class GOComponent;
 typedef std::string GOC_IDType;
@@ -33,7 +33,7 @@ class GameObject : public Loadable
 		std::vector<GOC_IDType> listComponentFamilies();
 		std::vector<GO_Requirement> listRequirements();
 
-		bool requirementsSet();
+		bool requirementsMet();
 
 
 		virtual GO_IDType constructHash();
@@ -41,10 +41,6 @@ class GameObject : public Loadable
 		/** Default destructor */
 		virtual ~GameObject();
 	protected:
-
-		void addRequirement();
-		void removeRequirement();
-		void clearRequirements();
 
 
 		//for easy access

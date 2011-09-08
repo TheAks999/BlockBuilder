@@ -153,4 +153,19 @@ GO_IDType GameObject::constructHash()
 	return m_id;
 }
 
+/** @brief requirementsMet
+  * find out if the object is really ready to be used
+  * @return true if all requirements are met
+  */
 
+bool GameObject::requirementsMet()
+{
+	for (ComponentTable_t::iterator it = m_components.begin(); it != m_components.end(); it++)
+	{
+		if ( !(it->second->requirementsMet()) )
+		{
+			return false;
+		}
+	}
+	return true;
+}
