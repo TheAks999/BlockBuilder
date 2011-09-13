@@ -5,9 +5,12 @@
     <Test id="1">
       <Name>GameObjectTest::DoBasicSetup</Name>
     </Test>
+    <Test id="2">
+      <Name>GameObjectTest::AddComponent</Name>
+    </Test>
   </SuccessfulTests>
   <Statistics>
-    <Tests>1</Tests>
+    <Tests>2</Tests>
     <FailuresTotal>0</FailuresTotal>
     <Errors>0</Errors>
     <Failures>0</Failures>

@@ -23,7 +23,7 @@ class foh_GOComponentA : public GOComponent
 
 		void update() {}
 
-		const GOC_IDType constructHash() const { return familyID(); }
+		GOC_IDType constructHash() { return familyID(); }
 };
 
 class foh_GOComponentB: public GOComponent
@@ -35,7 +35,7 @@ class foh_GOComponentB: public GOComponent
 
 		void update() {}
 
-		const GOC_IDType constructHash() const { return familyID(); }
+		GOC_IDType constructHash(){ return familyID(); }
 };
 
 
@@ -49,7 +49,7 @@ class foh_GOComponentC: public GOComponent
 
 		void update() {}
 
-		const GOC_IDType constructHash() const { return familyID(); }
+		 GOC_IDType constructHash() const { return familyID(); }
 };
 
 /** components with different families **/
@@ -62,7 +62,7 @@ class foh_GOComponentD: public GOComponent
 
 		void update() {}
 
-		const GOC_IDType constructHash() const { return familyID(); }
+		GOC_IDType constructHash() const { return familyID(); }
 };
 
 /** components with different families **/
@@ -75,7 +75,7 @@ class foh_GOComponentE: public GOComponent
 
 		void update() {}
 
-		const GOC_IDType constructHash() const { return familyID(); }
+		GOC_IDType constructHash() const { return familyID(); }
 };
 
 
@@ -89,17 +89,15 @@ void GameObjectTest::AddComponent()
 	CPPUNIT_ASSERT( !GO.hasComponentFam("family4") );
 
 	//insert the first component
-	foh_GOComponentA comp1;
-	GO.setGOC( &comp1 );
+	foh_GOComponentA * comp1 = new foh_GOComponentA;
+	GO.setGOC( comp1 );
 
 	CPPUNIT_ASSERT( !GO.hasComponentFam("") ); // empty family check
 	CPPUNIT_ASSERT( GO.hasComponentFam("family1") );
 	CPPUNIT_ASSERT( !GO.hasComponentFam("family2") );
 	CPPUNIT_ASSERT( !GO.hasComponentFam("family3") );
 	CPPUNIT_ASSERT( !GO.hasComponentFam("family4") );
-
 	CPPUNIT_ASSERT( GO.getGOC("family1") == comp1 );
-
 
 	//insert a second component
 

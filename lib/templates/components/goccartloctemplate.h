@@ -20,11 +20,11 @@ class GOC_CartLocTemplate : public GOCTemplate
 
 		GOComponent * makeComponent()
 		{
-			GOC_CartLoc * temp = new GOC_CartLoc;
+			/*GOC_CartLoc * temp = new GOC_CartLoc;
 			temp->x(x());
 			temp->y(y());
 			temp->z(z());
-			return dynamic_cast<GOComponent*>(temp);
+			return dynamic_cast<GOComponent*>(temp);*/ return NULL;
 		}
 
 		GOC_IDType constructHash(){ return std::string("Location Cartesian_Location ") + templateID(); }

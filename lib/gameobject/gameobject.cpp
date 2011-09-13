@@ -33,6 +33,7 @@ void GameObject::id( const unsigned int& ID )
 	ComponentTable_t::iterator it = m_components.begin();
 	for (; it != m_components.end(); it++)
 	{
+
 		if (it->second)
 		{
 			delete it->second;
