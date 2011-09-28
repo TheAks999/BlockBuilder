@@ -11,6 +11,9 @@ class GameObjectTest : public  CppUnit::TestFixture
 	CPPUNIT_TEST( DoBasicSetup );
 
 	CPPUNIT_TEST( AddComponent );
+	CPPUNIT_TEST( AddComponentOfDiffFam );
+	CPPUNIT_TEST( AddComponentOfSameFam );
+
 	/*
 	CPPUNIT_TEST( RemoveComponent );
 
@@ -31,6 +34,8 @@ class GameObjectTest : public  CppUnit::TestFixture
 	void DoBasicSetup();
 
 	void AddComponent();
+	void AddComponentOfDiffFam();
+	void AddComponentOfSameFam();
 	void DoComponentCleanup();
 	void RemoveComponent();
 

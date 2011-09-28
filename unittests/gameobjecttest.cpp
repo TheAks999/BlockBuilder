@@ -99,8 +99,43 @@ void GameObjectTest::AddComponent()
 	CPPUNIT_ASSERT( !GO.hasComponentFam("family4") );
 	CPPUNIT_ASSERT( GO.getGOC("family1") == comp1 );
 
-	//insert a second component
+}
 
+void AddComponentOfDiffFam()
+{
+	//insert a second component of the same family
+	foh_GOComponentA * comp1 = new foh_GOComponentA;
+	GO.setGOC( comp1 );
+	foh_GOComponentC * comp2 = new foh_GOComponentC;
+	GO.setGOC( comp2 );
+	CPPUNIT_ASSERT( !GO.hasComponentFam("") ); // empty family check
+	CPPUNIT_ASSERT( GO.hasComponentFam("family1") );
+	CPPUNIT_ASSERT( GO.hasComponentFam("family2") );
+	CPPUNIT_ASSERT( !GO.hasComponentFam("family3") );
+	CPPUNIT_ASSERT( !GO.hasComponentFam("family4") );
+	CPPUNIT_ASSERT( GO.getGOC("family1") == comp1 );
+	CPPUNIT_ASSERT( GO.getGOC("family2") == comp2 );
+
+	foh_GOComponentD * comp3 = new foh_GOComponentD;
+	foh_GOComponentE * comp4 = new foh_GOComponentE;
+	GO.setGOC( comp3 );
+	GO.setGOC( comp4 );
+
+
+	CPPUNIT_ASSERT( !GO.hasComponentFam("") ); // empty family check
+	CPPUNIT_ASSERT( GO.hasComponentFam("family1") );
+	CPPUNIT_ASSERT( GO.hasComponentFam("family2") );
+	CPPUNIT_ASSERT( GO.hasComponentFam("family3") );
+	CPPUNIT_ASSERT( GO.hasComponentFam("family4") );
+	CPPUNIT_ASSERT( GO.getGOC("family1") == comp1 );
+	CPPUNIT_ASSERT( GO.getGOC("family2") == comp2 );
+	CPPUNIT_ASSERT( GO.getGOC("family3") == comp3 );
+	CPPUNIT_ASSERT( GO.getGOC("family4") == comp4 );
+
+}
+
+void AddComponentOfSameFam()
+{
 }
 
 void RemoveComponent();
